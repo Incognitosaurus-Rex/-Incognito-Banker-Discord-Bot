@@ -20,11 +20,13 @@ async function command(key, user, userID, type, args) {
     //Makes sure all required Directories and Files Exists
     await initializeStorage(key);
 
-    //Generate Account Number
-    var accountNumber = await getAccountNumber(key, userID);
+	try{
+		//Generate Account Number
+		var accountNumber = await getAccountNumber(key, userID);
 
-    //Checks and Updates User Account
-    await checkAccount(key, accountNumber, userID);
+		//Checks and Updates User Account
+		await checkAccount(key, accountNumber, userID);
+	}catch{};
 
     //Debuging Log
     console.log('- '.green + user.green + ':'.green + ' $'.yellow + type.yellow);
