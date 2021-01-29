@@ -1,1 +1,1 @@
-# -Incognito-Banker-Discord-Bot
+# [Incognito Banker] - Discord Bot
