@@ -123,7 +123,7 @@ async function startBot() {
     // Automatically reconnect if the bot disconnects due to inactivity
     bot.on('disconnect', function (erMsg, code) {
         console.log('----- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '-----');	
-	spawn('sh', [GitPush.sh]);
+	spawn('sh', ['/GitPush.sh']);
 	console.log('Git Pushed')
         bot.connect();
     });
