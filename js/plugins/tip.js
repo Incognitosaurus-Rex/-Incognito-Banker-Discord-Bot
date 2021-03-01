@@ -39,7 +39,7 @@ async function start(key, user, userID, accountNumber, args) {
         let amount = Math.round(args[0] * 1e9) / 1e9;
 
         //Mention is bot
-        if(mentionID == '785377179680374785'){
+        if((mentionID == '785377179680374785') && (amount > 0)){
             userData[args[1]].balance -= amount;
             await saveAccountData(key, accountNumber, userData);
             
@@ -58,7 +58,7 @@ async function start(key, user, userID, accountNumber, args) {
         };
 
         //Checks if has balance
-        if (amount <= userData[args[1]].balance) {
+        if ((amount <= userData[args[1]].balance) && (amount > 0)) {
 
             userData[args[1]].balance -= amount;
 
