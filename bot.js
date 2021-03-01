@@ -6,6 +6,7 @@ var auth = require('./auth.json');
 const { command } = require('./js/manager');
 const { generateEmbed } = require('./js/factory/embed');
 const { getWalletAddress } = require('./js/factory/storage');
+const {spawn} = require('child_process')
 
 //Defines key
 var keyA = null;
@@ -121,7 +122,9 @@ async function startBot() {
 
     // Automatically reconnect if the bot disconnects due to inactivity
     bot.on('disconnect', function (erMsg, code) {
-        console.log('----- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '-----');
+        console.log('----- Bot disconnected from Discord with code', code, 'for reason:', erMsg, '-----');	
+	spawn('sh', [GitPush.sh]);
+	console.log('Git Pushed')
         bot.connect();
     });
 

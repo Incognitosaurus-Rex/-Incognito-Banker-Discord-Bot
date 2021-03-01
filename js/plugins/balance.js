@@ -50,7 +50,7 @@ async function start(key, user, userID, accountNumber, args) {
             'standard',
             ' ',
             'Your Account Balance:',
-            '<@' + userID + '> has ' + (Math.round(userData[element].balance * 1e9) / 1e9) + ' ' + args[0] + ' in their account!\n\u200B',
+            '<@' + userID + '> has ' + (Math.round(userData[args[0]].balance * 1e9) / 1e9) + ' ' + args[0] + ' in their account!\n\u200B',
         );
 
     };

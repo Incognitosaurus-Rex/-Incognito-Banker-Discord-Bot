@@ -45,7 +45,7 @@ async function start(key, user, userID, accountNumber, args) {
             
             let coinData = await getCoinData(key);
             coinData[args[1]].claimed -= amount;
-            await saveCoinData(key);
+            await saveCoinData(coinData);
 
             return await generateEmbed(
                 'standard',

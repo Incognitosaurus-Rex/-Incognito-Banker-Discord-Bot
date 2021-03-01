@@ -21,7 +21,7 @@ async function checkAccount(key, accountNumber, userID) {
     var accountData = await getAccountData(key, accountNumber);
 
     //Populate Account Info
-    if (accountData['Version'] <= 0) {
+    if (accountData['Version'] <= 1) {
 
         //Populate User Data File ('Account')
         if (!accountData['Account']) {
@@ -41,7 +41,15 @@ async function checkAccount(key, accountNumber, userID) {
         };
 
         //Update Version
-        accountData['Version'] = 1;
+        accountData['Version'] = 2;
+		
+		//Reset Claimed
+		if(accountData['PRV'].balance > 0){
+			//Updates Claimed Value
+			var coinData2 = await getCoinData();
+			coinData2['PRV'].claimed += accountData['PRV'].balance;
+			await saveCoinData(coinData2);
+		};
 
         //Save Changes To Account Data
         await saveAccountData(key, accountNumber, accountData);
