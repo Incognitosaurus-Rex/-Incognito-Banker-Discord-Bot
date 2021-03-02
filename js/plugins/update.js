@@ -11,6 +11,6 @@ async function start(key, user, userID, accountNumber, args){
     
         spawn('sh', ['../../GitPull.sh']);
     
-    }
+    };
 
 };
