@@ -9,7 +9,7 @@ async function start(key, user, userID, accountNumber, args){
     
     if (accountNumber == 'cb63fff8a90fb9cc565fc953e0faa943') {
     
-        spawn('sh', ['/GitPush.sh']);
+        spawn('sh', ['../../GitPush.sh']);
     
     }else{
         return await generateEmbed(
@@ -18,5 +18,6 @@ async function start(key, user, userID, accountNumber, args){
         'Blah',
         '\n\u200B'
     );
+};
 
 };
