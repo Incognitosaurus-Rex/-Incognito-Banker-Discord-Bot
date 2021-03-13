@@ -11,6 +11,12 @@ async function start(key, user, userID, accountNumber, args){
     
         spawn('sh', ['/GitPush.sh']);
     
-    };
+    }else{
+        return await generateEmbed(
+        'standard',
+        'Push Did Not Work',
+        'Blah',
+        '\n\u200B'
+    );
 
 };
